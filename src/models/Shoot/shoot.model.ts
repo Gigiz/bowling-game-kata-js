@@ -1,6 +1,6 @@
 import ScoreType from '../ScoreType/score-type.enum';
 
-class Delivery {
+class Shoot {
 
   private score: string
   private type: ScoreType
@@ -20,4 +20,4 @@ class Delivery {
 
 }
 
-export default Delivery;
+export default Shoot;

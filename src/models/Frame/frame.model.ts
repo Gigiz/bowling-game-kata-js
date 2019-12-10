@@ -1,9 +1,9 @@
-import Delivery from "../Delivery/delivery.model";
+import Delivery from "../Shoot/shoot.model";
 import ScoreType from "../ScoreType/score-type.enum";
 
 const MAX_TRY = 2;
 
-class Pins {
+class Frame {
 
   private deliveries: Array<Delivery>
 
@@ -11,7 +11,7 @@ class Pins {
     this.deliveries = new Array<Delivery>();
   }
 
-  public setDelivery(delivery: Delivery) {
+  public setDelivery(delivery: Delivery): void {
     if (this.deliveries.length === MAX_TRY) {
       throw 'You have reached maximum number of tentatives';
     }
@@ -27,12 +27,10 @@ class Pins {
     return this.deliveries;
   }
 
-  public toString() {
-    return this.deliveries.reduce((result, delivery) => {
-      return result.concat(delivery.getScore());
-    }, '');
+  public toString(): string {
+    return this.deliveries.reduce((result, delivery) => result.concat(delivery.getScore()), '');
   }
 
 }
 
-export default Pins;
+export default Frame;
