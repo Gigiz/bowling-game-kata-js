@@ -1,0 +1,40 @@
+{
+  "name": "bowling-game-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "npm run clear && tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "webpack",
+    "postbuild": "npm run test",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "dev": "tsc",
+    "postdev": "node dist/index.js",
+    "clear": "rm -r dist/* || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gigiz/bowling-game-kata-js.git"
+  },
+  "author": "Luigi Colombi <lucolombi89@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gigiz/bowling-game-kata-js/issues"
+  },
+  "homepage": "https://github.com/Gigiz/bowling-game-kata-js#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.16",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
